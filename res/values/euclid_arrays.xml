@@ -15,5 +15,16 @@
   limitations under the License.
 -->
 <resources>
+<string-array name="quickspace_weather_provider_entries">
+        <item>@string/quickspace_weather_provider_entry_auto</item>
+        <item>@string/quickspace_weather_provider_entry_seraphix</item>
+        <item>@string/quickspace_weather_provider_entry_omnijaws</item>
+    </string-array>
 
+    <string-array name="quickspace_weather_provider_values">
+        <item>auto</item>
+        <item>seraphix</item>
+        <item>omnijaws</item>
+    </string-array>
+    
 </resources>
