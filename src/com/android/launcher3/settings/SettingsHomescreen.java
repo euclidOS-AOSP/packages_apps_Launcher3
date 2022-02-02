@@ -111,7 +111,8 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if (LauncherPrefs.SHOW_HOTSEAT_BG.getSharedPrefKey().equals(key) ||
-                LauncherPrefs.HOTSEAT_OPACITY.getSharedPrefKey().equals(key)) {
+                LauncherPrefs.HOTSEAT_OPACITY.getSharedPrefKey().equals(key) ||
+                LauncherPrefs.DOCK_SEARCH.getSharedPrefKey().equals(key)) {
             LauncherAppState.INSTANCE.executeIfCreated(app -> app.setNeedsRestart());
         }
     }
@@ -171,6 +172,7 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
         private static final String KEY_MINUS_ONE = "pref_enable_minus_one";
 
         private Preference mShowGoogleAppPref;
+        private Preference mShowGoogleBarPref;
 
         @Override
         public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -192,6 +194,8 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
             PreferenceScreen screen = getPreferenceScreen();
 
             mShowGoogleAppPref = screen.findPreference(KEY_MINUS_ONE);
+            mShowGoogleBarPref = screen.findPreference(LauncherPrefs.DOCK_SEARCH.getSharedPrefKey());
+
             updateIsGoogleAppEnabled();
 
             // If the target preference is not in the current preference screen, find the parent
@@ -276,6 +280,9 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
         private void updateIsGoogleAppEnabled() {
             if (mShowGoogleAppPref != null) {
                 mShowGoogleAppPref.setEnabled(Utilities.isGSAEnabled(getContext()));
+            }
+            if (mShowGoogleBarPref != null) {
+                mShowGoogleBarPref.setEnabled(Utilities.isGSAEnabled(getContext()));
             }
         }
 
