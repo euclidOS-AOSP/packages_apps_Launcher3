@@ -23,4 +23,14 @@
     <color name="qsb_primary">@*android:color/system_accent3_100</color>
     <color name="qsb_secondary">@*android:color/system_accent1_300</color>
     <color name="qsb_quaternary">@*android:color/system_accent1_100</color>
+
+    <!-- Material Expressive -->
+    <dimen name="dashboard_tile_image_size">40dp</dimen>
+    <dimen name="dashboard_tile_foreground_image_size">24dp</dimen>
+    <dimen name="dashboard_tile_foreground_image_inset">8dp</dimen>
+    <dimen name="preference_icon_foreground_image_inset">12dp</dimen>
+
+    <!-- Meminfo in overview -->
+    <dimen name="meminfo_bottom_margin_gesture">15dp</dimen>
+    <dimen name="meminfo_bottom_margin_three_button">15dp</dimen>
 </resources>
