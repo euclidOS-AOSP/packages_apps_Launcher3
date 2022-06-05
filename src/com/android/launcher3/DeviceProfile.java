@@ -227,6 +227,7 @@ public class DeviceProfile {
     public int allAppsCloseDuration;
     public int allAppsLeftRightMargin;
     public final int numShownAllAppsColumns;
+    private float allAppsCellHeightMultiplier;
 
     private final OverviewProfile overviewProfile;
 
@@ -392,6 +393,9 @@ public class DeviceProfile {
                 mTypeIndex,
                 inv
         );
+
+        allAppsCellHeightMultiplier =
+                    (float) LauncherPrefs.ROW_HEIGHT.get(context) / 100F;
 
         edgeMarginPx = res.getDimensionPixelSize(R.dimen.dynamic_grid_edge_margin);
         workspaceContentScale = res.getFloat(R.dimen.workspace_content_scale);
@@ -729,7 +733,7 @@ public class DeviceProfile {
      */
     public int getMaxAllAppsRowCount() {
         return (int) (Math.ceil((mDeviceProperties.getAvailableHeightPx() - allAppsPadding.top)
-                / (float) getAllAppsProfile().getCellHeightPx()));
+                / ((float) getAllAppsProfile().getCellHeightPx() * allAppsCellHeightMultiplier)));
     }
 
     /**
@@ -1242,8 +1246,8 @@ public class DeviceProfile {
                 && !(mIsResponsiveGrid && getAllAppsProfile().getMaxAllAppsTextLineCount() == 2)) {
             // Add extra textHeight to the existing allAppsCellHeight.
             mAllAppsProfile = getAllAppsProfile().copyWithCellHeightPx(
-                    getAllAppsProfile().getCellHeightPx() + Utilities.calculateTextHeight(
-                            getAllAppsProfile().getIconTextSizePx())
+                    (int) ((float) getAllAppsProfile().getCellHeightPx() * allAppsCellHeightMultiplier)
+                    + Utilities.calculateTextHeight( getAllAppsProfile().getIconTextSizePx())
             );
         }
 
