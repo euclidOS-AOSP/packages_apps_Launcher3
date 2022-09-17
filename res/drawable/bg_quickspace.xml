@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2025 euclidOS
+<!-- Copyright (C) 2018-2025 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,17 +13,5 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
-
-    <!-- Meminfo in overview -->
-    <dimen name="meminfo_claimed_height">16dp</dimen>
-
-    <!-- Overview scrolling scale animation -->
-    <dimen name="overview_scroll_scale">0.9</dimen>
-
-    <!-- QuickSpace -->
-    <dimen name="quickspace_title_size">20sp</dimen>
-    <dimen name="quickspace_subtitle_size">16sp</dimen>
-    <dimen name="quickspace_alternate_title_size">18sp</dimen>
-    <dimen name="quickspace_alternate_subtitle_size">16sp</dimen>
-</resources>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle" />
