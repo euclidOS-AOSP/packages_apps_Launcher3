@@ -171,6 +171,9 @@ public class TaskbarManagerImpl implements DisplayDecorationListener {
     public static final Uri GESTURE_NAVBAR_LENGTH_MODE = Settings.System.getUriFor(
             Settings.System.GESTURE_NAVBAR_LENGTH_MODE);
 
+    public static final Uri GESTURE_NAVBAR_HEIGHT_MODE = Settings.System.getUriFor(
+            Settings.System.GESTURE_NAVBAR_HEIGHT_MODE);
+
     private static final LooperExecutor TASKBAR_UI_THREAD =
             new LooperExecutor("TASKBAR_UI_THREAD", THREAD_PRIORITY_FOREGROUND);
 
@@ -504,6 +507,8 @@ public class TaskbarManagerImpl implements DisplayDecorationListener {
                 .register(NAVIGATION_BAR_HINT, mOnTaskBarChangeListener);
         SettingsCache.INSTANCE.get(mPrimaryWindowContext)
                 .register(GESTURE_NAVBAR_LENGTH_MODE, mOnTaskBarChangeListener);
+        SettingsCache.INSTANCE.get(mPrimaryWindowContext)
+                .register(GESTURE_NAVBAR_HEIGHT_MODE, mOnTaskBarChangeListener);
         if (DesktopExperienceFlags.ENABLE_SYS_DECORS_CALLBACKS_VIA_WM.isTrue()
                 && DesktopExperienceFlags.ENABLE_DISPLAY_CONTENT_MODE_MANAGEMENT.isTrue()) {
             displaysWithDecorationsRepositoryCompat
@@ -1203,6 +1208,8 @@ public class TaskbarManagerImpl implements DisplayDecorationListener {
                 .unregister(NAVIGATION_BAR_HINT, mOnTaskBarChangeListener);
         SettingsCache.INSTANCE.get(mPrimaryWindowContext)
                 .unregister(GESTURE_NAVBAR_LENGTH_MODE, mOnTaskBarChangeListener);
+        SettingsCache.INSTANCE.get(mPrimaryWindowContext)
+                .unregister(GESTURE_NAVBAR_HEIGHT_MODE, mOnTaskBarChangeListener);
         if (DesktopExperienceFlags.ENABLE_SYS_DECORS_CALLBACKS_VIA_WM.isTrue()
                 && DesktopExperienceFlags.ENABLE_DISPLAY_CONTENT_MODE_MANAGEMENT.isTrue()) {
             mDisplaysWithDecorationsRepositoryCompat.unregisterDisplayDecorationListener(this);
