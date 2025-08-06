@@ -33,6 +33,7 @@ import androidx.annotation.VisibleForTesting;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
@@ -126,7 +127,7 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
                 LauncherPrefs.SINGLE_PAGE_CENTER.getSharedPrefKey().equals(key) ||
                 LauncherPrefs.DARK_STATUS_BAR.getSharedPrefKey().equals(key) ||
                 LauncherPrefs.SHOW_QUICKSPACE.getSharedPrefKey().equals(key) ||
-                LauncherPrefs.SHOW_QUICKSPACE_ALT.getSharedPrefKey().equals(key) ||
+                LauncherPrefs.QUICKSPACE_UI_STYLE.getSharedPrefKey().equals(key) ||
                 LauncherPrefs.SHOW_QUICKSPACE_PSONALITY.getSharedPrefKey().equals(key) ||
                 LauncherPrefs.SHOW_QUICKSPACE_NOWPLAYING.getSharedPrefKey().equals(key) ||
                 LauncherPrefs.SHOW_QUICKSPACE_WEATHER.getSharedPrefKey().equals(key) ||
@@ -179,14 +180,21 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
     /**
      * This fragment shows the launcher preferences.
      */
-    public static class HomescreenSettingsFragment extends SettingsBasePreferenceFragment implements
-            SettingsCache.OnChangeListener {
+    public static class HomescreenSettingsFragment extends SettingsBasePreferenceFragment  implements
+            SettingsCache.OnChangeListener, SharedPreferences.OnSharedPreferenceChangeListener {
 
         private boolean mRestartOnResume = false;
 
         private String mHighLightKey;
 
         private boolean mPreferenceHighlighted = false;
+
+        private static final String KEY_QUICKSPACE_STYLE = "pref_quickspace_style";
+        private static final String KEY_EUCLID_ACCENT 
+= "pref_quickspace_euclid_accent";
+
+        private ListPreference mQuickspaceStyle;
+        private Preference mEuclidAccent;
 
         private static final String KEY_MINUS_ONE = "pref_enable_minus_one";
         private static final String KEY_GENERAL_CATEGORY = "general_category";
@@ -215,6 +223,12 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
 
             mShowGoogleAppPref = screen.findPreference(KEY_MINUS_ONE);
             mShowGoogleBarPref = screen.findPreference(LauncherPrefs.DOCK_SEARCH.getSharedPrefKey());
+
+            mQuickspaceStyle = screen.findPreference(KEY_QUICKSPACE_STYLE);
+            mEuclidAccent = 
+screen.findPreference(KEY_EUCLID_ACCENT);
+
+            updateEuclidAccentVisibility();
 
             updateIsGoogleAppEnabled();
 
@@ -322,7 +336,9 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
                     getView().postDelayed(highlighter, DELAY_HIGHLIGHT_DURATION_MILLIS);
                     mPreferenceHighlighted = true;
                 }
-            }
+             }
+            getPreferenceManager().getSharedPreferences()
+                    .registerOnSharedPreferenceChangeListener(this);
             updateIsGoogleAppEnabled();
 
             if (mRestartOnResume) {
@@ -334,6 +350,13 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
         public void onSettingsChanged(boolean isEnabled) {
             // Developer options changed, try recreate
             tryRecreateActivity();
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
+            getPreferenceManager().getSharedPreferences()
+                    .unregisterOnSharedPreferenceChangeListener(this);
         }
 
         /**
@@ -370,6 +393,25 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
             return position >= 0 ? new PreferenceHighlighter(
                     list, position, screen.findPreference(mHighLightKey))
                     : null;
+        }
+
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+            if (KEY_QUICKSPACE_STYLE.equals(key)) {
+                updateEuclidAccentVisibility();
+            }
+        }
+
+        private void updateEuclidAccentVisibility() {
+            if (mEuclidAccent == null || 
+mQuickspaceStyle == null) {
+                return;
+            }
+            // The "Euclid" style has a value of "2" 
+            // in your arrays.xml
+            boolean isEuclidStyle = 
+"2".equals(mQuickspaceStyle.getValue());
+            mEuclidAccent.setVisible(isEuclidStyle);
         }
     }
 }
