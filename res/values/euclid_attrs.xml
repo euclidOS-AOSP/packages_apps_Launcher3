@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2016 The Android Open Source Project
+<!--
+     Copyright (C) 2025 euclidOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,12 +14,15 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<com.android.launcher3.popup.PopupContainerWithArrow
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/popup_container"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:clipChildren="false"
-    android:clipToPadding="false"
-    android:orientation="vertical"/>
+<resources>
 
+    <!-- Base attributes available to CustomSeekBarPreference. -->
+    <declare-styleable name="CustomSeekBarPreference">
+        <attr name="defaultValueText" format="string" />
+        <attr name="interval" format="integer" />
+        <attr name="showSign" format="boolean" />
+        <attr name="units" format="string|reference" />
+        <attr name="continuousUpdates" format="boolean" />
+    </declare-styleable>
+
+</resources>
