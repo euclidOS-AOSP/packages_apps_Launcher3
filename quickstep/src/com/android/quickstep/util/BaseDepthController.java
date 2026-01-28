@@ -75,6 +75,11 @@ public class BaseDepthController {
     private static final int DEPTH_INDEX_WIDGET = 1;
     private static final int DEPTH_INDEX_COUNT = 2;
 
+
+    // Global blur tuning to match SystemUI BlurUtils
+    private static final float GLOBAL_BLUR_SCALE = 0.85f;
+    private static final int MAX_BLUR_RADIUS_PX = 18;
+    
     // b/291401432
     private static final String TAG = "BaseDepthController";
 
@@ -131,8 +136,8 @@ public class BaseDepthController {
         if (Flags.allAppsBlur() || enableOverviewBackgroundWallpaperBlur()) {
             mCrossWindowBlursEnabled =
                     CrossWindowBlurListeners.getInstance().isCrossWindowBlurEnabled();
-            mMaxBlurRadius = activity.getResources().getDimensionPixelSize(
-                    R.dimen.max_depth_blur_radius_enhanced);
+            mMaxBlurRadius = Math.min(activity.getResources().getDimensionPixelSize(
+                R.dimen.max_depth_blur_radius_enhanced), MAX_BLUR_RADIUS_PX);
         } else {
             mMaxBlurRadius = activity.getResources().getInteger(R.integer.max_depth_blur_radius);
         }
@@ -240,8 +245,15 @@ public class BaseDepthController {
                         : mBaseSurface;
 
         int previousBlur = mCurrentBlur;
-        int newBlur = mCrossWindowBlursEnabled && !hasOpaqueBg && !mPauseBlurs ? (int) (blurAmount
-                * mMaxBlurRadius) : 0;
+        int newBlur = 0;
+        if (mCrossWindowBlursEnabled && !hasOpaqueBg && !mPauseBlurs) {
+           newBlur = (int) (blurAmount * mMaxBlurRadius * GLOBAL_BLUR_SCALE);
+
+        // Skip tiny blur values for performance
+        if (newBlur < 1) {
+            newBlur = 0;
+          }
+        }
         int delta = Math.abs(newBlur - previousBlur);
         if (skipSimilarBlur && delta < Utilities.dpToPx(1) && newBlur != 0 && previousBlur != 0
                 && blurAmount != 1f) {
