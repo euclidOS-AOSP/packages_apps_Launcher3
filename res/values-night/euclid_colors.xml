@@ -19,35 +19,30 @@
     <!-- Appseat -->
     <color name="appseat_color">@*android:color/system_neutral2_900</color>
 
+    <!-- Material Expressive -->
+    <color name="homepage_blue_variant_fg">@*android:color/accent_device_default_dark</color>
+    <color name="homepage_blue_variant_bg">@android:color/system_neutral1_600</color>
+    <color name="homepage_blue_fg">@*android:color/accent_device_default_dark</color>
+    <color name="homepage_blue_bg">@android:color/system_neutral1_600</color>
+    <color name="homepage_pink_fg">@*android:color/accent_device_default_dark</color>
+    <color name="homepage_pink_bg">@android:color/system_neutral1_600</color>
+    <color name="homepage_orange_fg">@*android:color/accent_device_default_dark</color>
+    <color name="homepage_orange_bg">@android:color/system_neutral1_600</color>
+    <color name="homepage_yellow_fg">@*android:color/accent_device_default_dark</color>
+    <color name="homepage_yellow_bg">@android:color/system_neutral1_600</color>
+    <color name="homepage_green_fg">@*android:color/accent_device_default_dark</color>
+    <color name="homepage_green_bg">@android:color/system_neutral1_600</color>
+    <color name="homepage_grey_fg">@*android:color/accent_device_default_dark</color>
+    <color name="homepage_grey_bg">@android:color/system_neutral1_600</color>
+    <color name="homepage_cyan_fg">@*android:color/accent_device_default_dark</color>
+    <color name="homepage_cyan_bg">@android:color/system_neutral1_600</color>
+    <color name="homepage_red_fg">@*android:color/accent_device_default_dark</color>
+    <color name="homepage_red_bg">@android:color/system_neutral1_600</color>
+    <color name="homepage_purple_fg">@*android:color/accent_device_default_dark</color>
+    <color name="homepage_purple_bg">@android:color/system_neutral1_600</color>
+
     <!-- Hotseat searchbar -->
     <color name="qsb_primary">@*android:color/system_accent3_100</color>
     <color name="qsb_secondary">@*android:color/system_accent1_300</color>
     <color name="qsb_quaternary">@*android:color/system_accent1_100</color>
-
-    <!-- Material Expressive -->
-    <dimen name="dashboard_tile_image_size">40dp</dimen>
-    <dimen name="dashboard_tile_foreground_image_size">24dp</dimen>
-    <dimen name="dashboard_tile_foreground_image_inset">8dp</dimen>
-    <dimen name="preference_icon_foreground_image_inset">12dp</dimen>
-
-    <!-- Meminfo in overview -->
-    <dimen name="meminfo_claimed_height">16dp</dimen>
-
-    <!-- QuickSpace -->
-    <dimen name="quickspace_title_size">20sp</dimen>
-    <dimen name="quickspace_subtitle_size">16sp</dimen>
-    <dimen name="quickspace_alternate_title_size">18sp</dimen>
-    <dimen name="quickspace_alternate_subtitle_size">16sp</dimen>
-
-    <!-- Search bar margins -->
-    <dimen name="all_apps_search_bar_margin_side">38dp</dimen>
-    <dimen name="all_apps_search_bar_margin_top">28dp</dimen>
-    <dimen name="all_apps_search_bar_height">55dp</dimen>
-    
-    <!-- Wallpaper carousel -->
-    <dimen name="wallpaper_carousel_height">120dp</dimen>
-
-    <!-- Burn-in protection shift amounts -->
-    <dimen name="burn_in_protection_horizontal_shift">12dp</dimen>
-    <dimen name="burn_in_protection_vertical_shift">6dp</dimen>
 </resources>
