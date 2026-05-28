@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020-2026 crDroid Android Project
+ * Copyright (C) 2020-2026 euclid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -165,7 +165,7 @@ public class QuickEventsController {
         } else if (luckNumber == 7) {
             mPSAStr = mResources.getStringArray(R.array.quickspace_psa_random);
             mEventTitleSub = mPSAStr[getLuckyNumber(0, mPSAStr.length - 1)];
-            mEventSubIcon = ContextCompat.getDrawable(mContext, R.drawable.ic_quickspace_crdroid);
+            mEventSubIcon = ContextCompat.getDrawable(mContext, R.drawable.ic_quickspace_euclid);
             mIsQuickEvent = true;
             return;
         }

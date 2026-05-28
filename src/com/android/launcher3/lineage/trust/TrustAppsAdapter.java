@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2019 The LineageOS Project
  * Copyright (C) 2023 AlphaDroid
- * Copyright (C) 2023-2026 crDroid Android Project
+ * Copyright (C) 2023-2026 euclid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.internal.util.crdroid.Utils;
+import com.android.internal.util.euclid.Utils;
 import com.android.launcher3.R;
 import com.android.launcher3.lineage.trust.db.TrustComponent;
 

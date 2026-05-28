@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021-2026 crDroid Android Project
+ * Copyright (C) 2021-2026 euclid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ import android.media.session.PlaybackState;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.android.internal.util.crdroid.OmniJawsClient;
+import com.android.internal.util.euclid.OmniJawsClient;
 
 import com.android.launcher3.LauncherPrefs;
 import com.android.launcher3.R;
