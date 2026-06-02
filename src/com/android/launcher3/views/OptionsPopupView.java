@@ -59,7 +59,7 @@ import com.android.launcher3.testing.shared.TestProtocol;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.android.internal.util.matrixx.Utils;
+import com.android.internal.util.euclid.EuclidUtils;
 
 /**
  * Popup shown on long pressing an empty space in launcher
