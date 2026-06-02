@@ -189,7 +189,7 @@ public class TaskbarManagerImpl implements DisplayDecorationListener {
             Settings.Secure.NAVIGATIONBAR_KEY_ORDER);
 
     public static final Uri NAV_BAR_LAYOUT_URI = Settings.Secure.getUriFor(
-            Settings.Secure.NAVBAR_LAYOUT_MODE);
+            "navbar_layout_mode");
 
     public static final Uri GESTURE_NAVBAR_LENGTH_MODE_URI = Settings.System.getUriFor(
             Settings.System.GESTURE_NAVBAR_LENGTH_MODE);
@@ -198,7 +198,7 @@ public class TaskbarManagerImpl implements DisplayDecorationListener {
             Settings.System.GESTURE_NAVBAR_HEIGHT_MODE);
 
     public static final Uri NAVBAR_IME_SPACE_URI = Settings.Secure.getUriFor(
-            Settings.Secure.NAVBAR_IME_SPACE);
+            "navbar_ime_space");
 
     public static final LooperExecutor TASKBAR_UI_THREAD =
             new LooperExecutor("TASKBAR_UI_THREAD", THREAD_PRIORITY_FOREGROUND);
