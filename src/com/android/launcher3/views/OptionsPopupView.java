@@ -311,7 +311,7 @@ public class OptionsPopupView<T extends Context & ActivityContext> extends Arrow
                         launcher.getWorkspace().getWallpaperOffsetForCenterPage())
                 .putExtra(EXTRA_WALLPAPER_LAUNCH_SOURCE, "app_launched_launcher")
                 .putExtra(EXTRA_WALLPAPER_FLAVOR, "focus_wallpaper");
-        final boolean isGoogleWpInstalled = Utils.isPackageInstalled(v.getContext(), GOOGLE_WP_PKG);
+        final boolean isGoogleWpInstalled = EuclidUtils.isPackageInstalled(v.getContext(), GOOGLE_WP_PKG);
         String pickerPackage = isGoogleWpInstalled ? GOOGLE_WP_PKG : DEFAULT_WP_PKG;
         if (!TextUtils.isEmpty(pickerPackage)) {
             intent.setPackage(pickerPackage);
