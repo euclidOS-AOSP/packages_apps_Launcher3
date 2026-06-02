@@ -29,7 +29,7 @@ import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.util.Log;
 
-import com.android.internal.util.matrixx.Utils;
+import com.android.internal.util.euclid.EuclidUtils;
 import com.android.launcher3.R;
 import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.dagger.ApplicationContext;
@@ -92,8 +92,8 @@ public class LauncherIconProvider extends IconProvider {
             return mThemedIconMap;
         }
         ArrayMap<String, ThemeData> map = loadIconMapFromResource(mContext.getResources(), R.xml.grayscale_icon_map);
-        if (Utils.isPackageInstalled(mContext, LAWNICONS_PACKAGE)
-                && Utils.isPackageEnabled(mContext, LAWNICONS_PACKAGE)) {
+           if (EuclidUtils.isPackageInstalled(mContext, LAWNICONS_PACKAGE)
+              && EuclidUtils.isPackageEnabled(mContext, LAWNICONS_PACKAGE)) {
             Map<String, ThemeData> m = loadExternalIcons();
             if (m != null) {
                 map.putAll(m);
