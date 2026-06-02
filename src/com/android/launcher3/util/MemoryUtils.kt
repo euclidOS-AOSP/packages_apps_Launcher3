@@ -24,7 +24,7 @@ object MemoryUtils {
     @JvmStatic
     fun releaseMemory() {
         try {
-            android.app.ActivityManager.getService().releaseMemory(606, 60, false, false)
+            android.app.ActivityManager.getService().killAllBackgroundProcesses()
             Log.d(TAG, "Memory release triggered successfully")
         } catch (e: Exception) {
             Log.e(TAG, "Failed to release memory", e)
