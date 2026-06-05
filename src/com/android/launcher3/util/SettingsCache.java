@@ -83,9 +83,6 @@ public class SettingsCache extends ContentObserver {
     private static final String SYSTEM_URI_PREFIX = Settings.System.CONTENT_URI.toString();
     private static final String GLOBAL_URI_PREFIX = Settings.Global.CONTENT_URI.toString();
 
-    private static final String SYSTEM_URI_PREFIX =
-            Settings.System.CONTENT_URI.toString();
-
     private final Function<Uri, CopyOnWriteArrayList<OnChangeListener>> mListenerMapper = uri -> {
         registerUriAsync(uri);
         return new CopyOnWriteArrayList<>();
