@@ -177,13 +177,13 @@ public class TaskbarManagerImpl implements DisplayDecorationListener {
             Settings.Secure.NAV_BAR_KIDS_MODE);
 
     public static final Uri ENABLE_TASKBAR_URI = Settings.System.getUriFor(
-            Settings.System.ENABLE_TASKBAR);
+            "enable_taskbar");
 
     public static final Uri NAVIGATION_BAR_HINT_URI = Settings.System.getUriFor(
-            Settings.System.NAVIGATION_BAR_HINT);
+            "navigation_bar_hint");
 
     public static final Uri FORCE_SHOW_NAVBAR_URI = Settings.System.getUriFor(
-            Settings.System.FORCE_SHOW_NAVBAR);
+            "force_show_navbar");
 
     public static final Uri NAVIGATIONBAR_KEY_ORDER_URI = Settings.Secure.getUriFor(
             Settings.Secure.NAVIGATIONBAR_KEY_ORDER);
