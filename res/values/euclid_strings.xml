@@ -332,49 +332,49 @@
         <item>Inspire others by being your authentic self.</item>
         <item>Your attitude determines your direction.</item>
     </string-array>
-    <string-array name="quickspace_psa_random">
-        <item>Ignorance is Bliss</item>
-        <item>Is it time to flash another update already?</item>
-        <item>Make peace, not war</item>
-        <item>Oh hey, what\'s up?</item>
-        <item>Welcome to real Matrix!</item>
-        <item>How many screenshots do you take?</item>
-        <item>Open goodness with crDroid</item>
-        <item>Spread love, not havoc</item>
-        <item>We didn\'t start the fire!</item>
-        <item>Time for some good music</item>
-        <item>\u003C\u003C\u003C\u003C\u003C\u003C\u003C HEAD</item>
-        <item>You need crDroid Premium to see this</item>
-        <item>Remember the Lineage of the Unicorn</item>
-        <item>Enjoy Xtended battery life</item>
-        <item>Starting from the ground zero</item>
-        <item>We love you 3000</item>
-        <item>Delicious even without Sushi</item>
-        <item>Do something nice today</item>
-        <item>This is best Pixel Experience, isn\'t it?</item>
-        <item>No illusions, welcome to reality!</item>
-        <item>Thank you for your support</item>
-        <item>No festival for Derps - only perfection!</item>
-        <item>One of the buildbot\'s best picks</item>
-        <item>Sanity for your Paranoia</item>
-        <item>Rising in peace</item>
-        <item>What a lovely experience, isn\'t it?</item>
-        <item>Evolution is a myth, right?</item>
-        <item>You are what you flash, don\'t be Potato</item>
-        <item>What\'s on your mind?</item>
-        <item>Expecto Patronum</item>
-        <item>Wubba Lubba Dub Dub</item>
-        <item>Winner Winner ....?</item>
-        <item>rm -rf \/</item>
-        <item>Pringles aren\'t actually potato chips..</item>
-        <item>Remember to check device\'s battery level!</item>
-        <item>Check your email/messages.</item>
-        <item>Check your to-do list if you have one.</item>
-        <item>You can disable quickspace via home settings.</item>
-        <item>Loving us? Send us a beer</item>
-        <item>Best Rom Ever.</item>
-        <item>Say hi to us on Telegram</item>
-        <item>We love you 3000</item>
+        <string-array name="quickspace_psa_random">
+        <item>The laws of nature are but the mathematical thoughts of God.</item>
+        <item>In geometry, there is no royal road. — Euclid</item>
+        <item>Truth is ever to be found in simplicity, and not in the multiplicity of things.</item>
+        <item>A line is length without breadth. — Euclid</item>
+        <item>The essence of mathematics is not to make simple things complicated, but to make complicated things simple.</item>
+        <item>The shortest path between two points is a straight line.</item>
+        <item>Everything has been figured out, except how to live. — Sartre</item>
+        <item>Logic will get you from A to B. Imagination will take you everywhere.</item>
+        <item>To see the world in a grain of sand, and heaven in a wild flower.</item>
+        <item>Mathematics is the language with which God has written the universe.</item>
+        <item>Q.E.D. — Which was to be demonstrated.</item>
+        <item>The perfect is the enemy of the good.</item>
+        <item>Order is the shape upon which the world is built.</item>
+        <item>Simplicity is the ultimate sophistication. — Da Vinci</item>
+        <item>Nature is a book written in the language of mathematics.</item>
+        <item>We are all apprentices in a craft where no one ever becomes a master.</item>
+        <item>Numbers are the highest degree of knowledge. It is knowledge itself.</item>
+        <item>The point is the beginning of all things.</item>
+        <item>To measure is to know.</item>
+        <item>The circle is the most perfect of all shapes.</item>
+        <item>Balance is the quiet eye of the storm.</item>
+        <item>Perfection is not reached when there is nothing left to add, but when there is nothing left to take away.</item>
+        <item>Proof is the structure of reality.</item>
+        <item>Chaos is just patterns we haven't solved yet.</item>
+        <item>Architecture is frozen music.</item>
+        <item>The sum of the parts is greater than the whole.</item>
+        <item>Gravity is a geometry.</item>
+        <item>Everything is determined, the beginning as well as the end.</item>
+        <item>Beauty is the first test; there is no permanent place in the world for ugly mathematics.</item>
+        <item>Be the architect of your own experience.</item>
+        <item>Look for the pattern, find the truth.</item>
+        <item>Victory is in the details.</item>
+        <item>Solving for x is an act of defiance against the unknown.</item>
+        <item>A proof is a story told by the universe.</item>
+        <item>Stability is a choice, not a default.</item>
+        <item>Information is the pulse of the machine.</item>
+        <item>Focus is the lens of the mind.</item>
+        <item>Configure, calculate, compose.</item>
+        <item>Support the makers of the math.</item>
+        <item>The best system is the one that disappears.</item>
+        <item>Stay connected to the proof.</item>
+        <item>We are the sum of our variables.</item>
     </string-array>
     <string name="intent_no_app_clock_found">Unable to find calendar or clock activity</string>
 
